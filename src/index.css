@@ -1,0 +1,154 @@
+.gradient-custom-3 {
+    /* fallback for old browsers */
+    background: #84fab0;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
+  }
+  
+  .gradient-custom-4 {
+    /* fallback for old browsers */
+    background: #84fab0;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+  } 
+
+
+  nav {
+    background: black;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.6s;
+    margin-top: 10px;
+    margin-left: 35px;
+  }
+
+  nav a, nav button {
+    margin-left: 40px;
+  }
+
+  nav a:hover, nav button:hover {
+    color: hotpink
+  }
+
+  nav button {
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.6s;
+  }
+
+  a.active {
+    background: mediumpurple;
+    padding: 5px 10px;
+    border-radius: 10px;
+  }
+
+
+  .gradient-custom-2 {
+    /* fallback for old browsers */
+    background: #fbc2eb;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1))
+    }
+
+
+
+    .container {
+      margin: 5%;
+    }
+
+    .change-password {
+      border: none;
+      background-color: mediumpurple;
+      color: white;
+      padding: 7px 10px;
+      border-radius: 10px;
+      box-shadow: 2px 1px 6px gray;
+    }
+
+    .form-group {
+      margin: 30px 0;
+    }
+
+    label {
+      font-weight: 500;
+    }
+
+    .form-control {
+      width: 400px;
+    }
+    .submit-password {
+      border: none;
+      background-color: mediumpurple;
+      color: white;
+      padding: 7px 10px;
+      border-radius: 10px;
+      box-shadow: 2px 1px 6px gray;
+    }
+
+
+    .edit-block {
+      display: flex;
+      justify-content: center;
+      margin-top: 7%;
+    }
+
+    .edit-input {
+      width: 250px;
+      display: block;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      padding: 5px 10px;
+      border: 2px solid rgb(142, 142, 142);
+    }
+
+    .edit-pwd {
+      margin-right: 30%;
+      border: 1px solid rgb(208, 208, 208);
+      padding: 50px 30px;
+      border-radius: 10px;
+    }
+    
+    .edit-login {
+      border: 1px solid rgb(208, 208, 208);
+      padding: 50px 30px;
+      border-radius: 10px;
+    }
+
+    .update-title {
+      margin-bottom: 30px;
+    }
+
+    .update-button {
+      border-radius: 10px;
+      background-color: mediumpurple;
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      box-shadow: 2px 1px 6px gray;
+
+    }
+
+    .settings-title {
+      text-align: center;
+      margin-top: 35px;
+    }
