@@ -7,6 +7,8 @@ import { Login } from './pages/Login'
 import { Profile } from './pages/Profile'
 import { Dashboard } from './pages/Profile/Dashboard'
 import { Settings } from './pages/Profile/Settings'
+import { Posts } from './pages/Profile/Posts'
+import { Search } from './pages/Profile/Search'
 
 const routes = createBrowserRouter([
   {
@@ -28,6 +30,14 @@ const routes = createBrowserRouter([
       {
         path: '/profile/settings',
         element: <Settings/>
+      },
+      {
+        path: 'posts',
+        element: <Posts/>
+      },
+      {
+        path: 'search',
+        element: <Search/>
       }
     ]
   }

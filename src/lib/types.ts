@@ -48,9 +48,16 @@ export interface ILoginUpdate{
 
 
 export interface NavLinkPolyfillProps {
-    to: string;
-    end?: boolean;
-    children: React.ReactNode;
-    className?: string;
-    [key: string]: any;
+    to: string
+    end?: boolean
+    children: React.ReactNode
+    className?: string
+    [key: string]: any
+}
+
+
+export interface IPost {
+    id: number
+    title: string
+    picture: string
 }

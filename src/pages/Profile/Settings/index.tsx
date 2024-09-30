@@ -12,6 +12,5 @@ export const Settings = () => {
                 <EditLogin/>
             </div>
         </div>
-
     </div> 
 }
