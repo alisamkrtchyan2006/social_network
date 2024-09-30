@@ -9,6 +9,7 @@ import { Dashboard } from './pages/Profile/Dashboard'
 import { Settings } from './pages/Profile/Settings'
 import { Posts } from './pages/Profile/Posts'
 import { Search } from './pages/Profile/Search'
+import { Account } from './pages/Profile/Acount'
 
 const routes = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ const routes = createBrowserRouter([
       {
         path: 'search',
         element: <Search/>
+      },
+      {
+        path: ':id',
+        element: <Account/>
       }
     ]
   }

@@ -61,3 +61,9 @@ export interface IPost {
     title: string
     picture: string
 }
+
+
+
+export interface IAccount extends IUser {
+    posts?: IPost[]
+}

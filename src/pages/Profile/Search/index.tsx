@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import { IUser } from "../../../lib/types"
 import { handleSearch } from "../../../lib/api"
-import { BACE_URL, DEFAULT_COVER, DEFAULT_PIC } from "../../../lib/constant"
+import { BACE_URL, DEFAULT_PIC } from "../../../lib/constant"
+import { Link } from "react-router-dom"
 
 export const Search = () => {
 
@@ -31,12 +32,13 @@ export const Search = () => {
         <div className="post-block">
             {
                 users.map(user => 
-                    <div>
+                    <div key={user.id}>
                         <img
                             className="post-picture"
                             src={user.picture? BACE_URL + user.picture : DEFAULT_PIC}
                         />
                         <p>{user.name} {user.surname}</p>
+                        <Link to={"/profile/" + user.id}>account</Link>
                     </div>
                 )
             }

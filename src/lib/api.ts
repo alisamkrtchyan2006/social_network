@@ -69,3 +69,17 @@ export const handleSearch = async (text:string):Promise<IResponse> => {
     const response = await Axios.get("/search/" + text)
     return response.data
 }
+
+
+
+export const handleSetAccountStatus = async (isPrivate: boolean): Promise<IResponse> => {
+    const response = await Axios.patch("/account/set", { isPrivate });
+    return response.data;
+}
+
+
+
+export const handleGetUserById = async (id: number): Promise<IResponse> => {
+    const response = await Axios.get("/account/" + id);
+    return response.data;
+};
