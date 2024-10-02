@@ -43,7 +43,8 @@ export const Profile = () => {
             <NavLinkPolyfill to="/profile/search">Search</NavLinkPolyfill>
             <NavLinkPolyfill to="/profile/posts">Posts</NavLinkPolyfill>
             <NavLinkPolyfill to="/profile/followers">Followers</NavLinkPolyfill>
-            <NavLinkPolyfill to="/profile/followers">Followers</NavLinkPolyfill>
+            <NavLinkPolyfill to="/profile/followers">Following</NavLinkPolyfill>
+            {account?.isPrivate && <NavLinkPolyfill to="/profile/requests">Requests</NavLinkPolyfill>}
             
             <button onClick={onLogout}>Logout</button>
         </nav>

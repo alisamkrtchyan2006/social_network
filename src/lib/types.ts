@@ -1,5 +1,5 @@
 export interface IUser {
-    id: string
+    id: number
     name: string
     surname: string
     login: string
@@ -66,4 +66,19 @@ export interface IPost {
 
 export interface IAccount extends IUser {
     posts?: IPost[]
+    available: boolean
+    connection: {
+        blockedMe: boolean
+        didIBlock: boolean
+        following: boolean
+        followsMe: boolean
+        requested: boolean
+    }
+}
+
+
+
+export interface IRequest {
+    id: number         
+    user: IUser
 }

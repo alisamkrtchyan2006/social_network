@@ -35,7 +35,7 @@ export const Posts = () => {
     }, [])
 
     return <>
-        <h3>Posts</h3>
+        <h3 className="posts">Posts</h3>
 
         <input
             type="file"
@@ -50,7 +50,9 @@ export const Posts = () => {
             value={text}
             onChange={e => setText(e.target.value)}
         />
-        <button onClick={() => photo.current?.click()} className="btn btn-s btn-info my-2">upload</button>
+        <div className="upload-block">
+            <button onClick={() => photo.current?.click()}>Upload</button>
+        </div>
 
         <Gallery posts={list}/>
     </>

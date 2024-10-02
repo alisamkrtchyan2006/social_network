@@ -21,14 +21,14 @@ export const Search = () => {
     }, [text])
 
     return <div style={{padding:10}}>
-        <h3>Search</h3>
+        <h3 className="search">Search</h3>
         <input
             placeholder="Search for a friends..."
             className="form-control"
             value={text}
             onChange={e => setText(e.target.value)}
         />
-        {users.length > 0 && <small>{users.length} users found</small>}
+        {users.length > 0 && <p className="found-user">{users.length} users found</p>}
         <div className="post-block">
             {
                 users.map(user => 

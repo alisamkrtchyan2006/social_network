@@ -7,7 +7,7 @@ interface IProps {
 
 export const Gallery:React.FC<IProps> = ({posts}) => {
     return <>
-        <p>You have {posts.length} posts</p>
+        <p className="posts-length">You have {posts.length} posts</p>
         <div className="post-block">
             {
                 posts.map(post => 
