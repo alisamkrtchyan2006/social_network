@@ -2,7 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Gallery } from "../../../components/gallery";
 import { useEffect, useState } from "react";
 import { IAccount } from "../../../lib/types";
-import { handleCancelRequest, handleGetAccount, handleSendFollow, handleUnfollow } from "../../../lib/api";
+import { handleBlockAccount, handleCancelRequest, handleGetAccount, handleSendFollow, handleUnfollow } from "../../../lib/api";
 import { BACE_URL, DEFAULT_PIC, PRIVATE_ACCOUNT } from "../../../lib/constant";
 
 export const Account = () => {
@@ -79,6 +79,78 @@ export const Account = () => {
         }
     }
 
+    const changePostStatus = (id:number) => {
+        if(account) {
+            const temp = {...account}
+            const post = temp.posts?.find(p => p.id == id)
+            if(post) {
+                post.isLiked = !post.isLiked
+            }
+            setAccount(temp)
+        }
+    }
+
+
+
+
+    const handleBlock = () => {
+        if(account) {
+            if(account.connection.blockedMe) {
+                setError("You are blocked")
+            }else if(account.connection.didIBlock) {
+                blockUser()
+            } else {
+                unblock()
+            }
+        }
+    }
+
+
+   
+    const blockUser = () => {
+        if (account && account.id) {
+            handleBlockAccount(account.id)
+                .then(response => {
+                    if (response.message == "blocked") {
+                        setAccount({
+                            ...account,
+                            connection: { ...account.connection, didIBlock: true },
+                            picture: "",
+                            posts: []
+                        })
+                    } else {
+                        setAccount(response.payload as IAccount)
+                    }
+                })
+        }
+    }
+    const unblock = () => {
+        if (account && account.id) {
+            handleBlockAccount(account?.id) 
+                .then(response => {
+                    if (response.message == "unblocked") {
+                        setAccount(response.payload as IAccount)
+                    } else {
+                        setAccount({
+                            ...account,
+                            connection: { ...account.connection, didIBlock: true },
+                            picture: "",
+                            posts: []
+                        })
+                    }
+                })
+        }
+    }
+
+
+
+
+
+
+
+
+
+
     useEffect(() => {
         if (id) { 
             handleGetAccount(id)
@@ -96,9 +168,6 @@ export const Account = () => {
         return <p>Loading...</p>
     }
 
-    if (error) {
-        return <p>{error}</p>
-    }
 
     return (
         <div>
@@ -118,6 +187,13 @@ export const Account = () => {
                         "FOLLOW"
                     }
                 </button>
+                <button className="block-btn" onClick={handleBlock}>
+                    {
+                        account.connection.didIBlock ? 
+                        "unblock" :
+                        "block"
+                    }
+                </button>
             </div>
             {account.isPrivate? 
                 <div className="private-pic">
@@ -126,9 +202,13 @@ export const Account = () => {
             : 
             <>
                 <h4 className="public-post">Posts</h4>
+                {error && <p className="blocked" style={{ color: "red" }}>{error}</p>}
                 <p className="public-text">
                     {account.posts && account.posts.length > 0 ? (
-                        <Gallery posts={account.posts} />
+                        <Gallery 
+                            onUpdatePost={changePostStatus}
+                            posts={account.posts} 
+                        />
                     ) : (
                         <p>No posts available.</p>
                     )}

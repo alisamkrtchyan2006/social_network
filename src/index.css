@@ -303,3 +303,90 @@
       justify-content: center;
       margin: 2% 0 1% 0;
     }
+
+
+
+
+    .post {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+
+    .post-img {
+      position: absolute;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .cover {
+      position: absolute;
+      width: 100%;
+      height: 0%;
+      background-color: black;
+      opacity: 0.7;
+      transition: 1s;
+      border-radius: 10px;
+    }
+
+    .post:hover .cover {
+      height: 100%;
+    }
+
+    .like-btn {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      opacity: 0;
+      transition: 2s;
+    }
+
+    .post:hover .like-btn {
+      opacity: 1;
+      transform: rotate(30deg);
+    }
+
+    .blocked {
+      text-align: center;
+    }
+
+    .block-btn {
+      background-color: rgb(255, 19, 19) !important;
+      color: white !important;
+      margin-left: 5% !important;
+    }
+
+    .delete {
+      position: absolute;
+      z-index: 10;
+      bottom: 0;
+      border: none;
+      background-color: rgb(224, 0, 0);
+      color: white;
+      border-radius: 5px;
+    }
+
+
+    .follower-pic {
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      margin-right: 1%;
+    }
+
+    .follow {
+      text-align: center;
+      margin: 3% 0;
+    }
+    .followers {
+      margin-left: 5%;
+    }

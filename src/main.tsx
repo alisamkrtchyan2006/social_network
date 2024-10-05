@@ -11,6 +11,8 @@ import { Posts } from './pages/Profile/Posts'
 import { Search } from './pages/Profile/Search'
 import { Account } from './pages/Profile/Acount'
 import { Requests } from './pages/Profile/Requests'
+import { Followers } from './pages/Profile/Followers'
+import { Following } from './pages/Profile/Following'
 
 const routes = createBrowserRouter([
   {
@@ -48,6 +50,14 @@ const routes = createBrowserRouter([
       {
         path: 'requests',
         element: <Requests/>
+      },
+      {
+        path: 'followers',
+        element: <Followers/>
+      },
+      {
+        path: 'following',
+        element: <Following/>
       }
     ]
   }

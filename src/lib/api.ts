@@ -122,3 +122,40 @@ export const handleDeclineRequest = async (id: number | undefined): Promise<IRes
     const response = await Axios.patch('/requests/decline/' + id)
     return response.data
 }
+
+
+export const handlePostReaction = async (id: number): Promise<IResponse> => {
+    const response = await Axios.post('/posts/react/' + id)
+    return response.data
+}
+
+
+export const handleBlockAccount = async (id: number | undefined): Promise<IResponse> => {
+    const response = await Axios.post('/block/' + id)
+    return response.data
+}
+
+
+export const handleDeletePost = async (postId: number): Promise<IResponse> => {
+    const response = await Axios.delete(`/posts/${postId}`)
+    return response.data
+}
+
+
+export const handleGetPost = async (id: number): Promise<IResponse> => {
+    const response = await Axios.get('/posts/' + id)
+    return response.data
+}
+
+
+export const handleGatFollowers = async (): Promise<IResponse> => {
+    const response = await Axios.get('/followers')
+    return response.data
+}
+
+
+export const handleGetFollowing = async (): Promise<IResponse> => {
+    const response = await Axios.get('/following')
+    return response.data
+}
+
